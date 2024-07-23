@@ -1,8 +1,20 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #141414;
     color: #ffffff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: linear-gradient(135deg, #5a0000 0%, #210101 100%);
+}
+.card{
+    font-family: "Poppins", sans-serif;
+    width: 450px;
+    text-align: center;
+    font-size: 14px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 36px;
+    background-color: rgb(91, 110, 110);
 }

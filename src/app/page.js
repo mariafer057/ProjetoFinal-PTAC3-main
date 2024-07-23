@@ -1,13 +1,13 @@
 'use client'
 import Image from "next/image";
-
-import "./styles.css";
+import styles from "./styles.css";
 import Link from "next/link";
-import Header from "./Componetes/Header";
-import Carregar from "./Componetes/Carregar";
-import Footer from "./Componetes/Footer";
+import Header from "./Componentes/Header";
+import Carregar from "./Componentes/Carregar";
+import Footer from "./Componentes/Footer";
+import NotFound from "./not-found";
 import { useEffect, useState } from "react";
-import ErrorGetData from "./Componetes/ErrorGetData";
+import ErrorGetData from "./Componentes/ErrorGetData";
 
 
 export default function Home() {
@@ -102,12 +102,10 @@ export default function Home() {
     <button onClick={tempMenor}>+</button>
     </div>
 
+
       {listaSeries.map((series)=> //o map vai mapear cada produto de uma forma individual
-            <div key={series.id}>
+            <div className={styles.card} key={series.id}>
               <h2 >Título: {series.titulo}</h2>
-              <h2>Diretor: {series.diretor}</h2>
-              <h2 >Ano de Publicação: {series.anoPublicacao}</h2>
-              <h2>Gênero: {series.genero}</h2>
               <h2>Temporadas: {series.temporadas}</h2>
               <Image 
               width= {150}
