@@ -113,7 +113,10 @@ export default function Home() {
               width= {150}
               height={150}
               src={series.imagem}/>
+
+              
               <Link href={"/serie/" + series.id}><p>Ver mais</p></Link>
+              
 
             </div>
       )}
