@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+
 import "./styles.css";
 import Link from "next/link";
 import Header from "./Componetes/Header";
@@ -32,7 +33,7 @@ export default function Home() {
       //ordem de Az
       const orderAz = () => {
         const newList = [...listaSeries].sort((a, b) => 
-        a.title.localeCompare(b.title)
+        a.titulo.localeCompare(b.titulo)
         );
         setListaSeries(newList);
       }
@@ -40,7 +41,7 @@ export default function Home() {
       //ordem de Za
       const orderZa = () =>{
         const newList = [...listaSeries].sort((a, b)=>
-          b.title.localeCompare(a.title)
+          b.titulo.localeCompare(a.titulo)
         );
         setListaSeries(newList);
       }
@@ -69,7 +70,7 @@ export default function Home() {
           return
         }
         const newList = listaSeries.filter((series) =>
-        series.title.toUpperCase().trim().includes(search.toUpperCase().trim()));
+        series.titulo.toUpperCase().trim().includes(search.toUpperCase().trim()));
         setListaSeries(newList);
       }
 
@@ -84,35 +85,35 @@ export default function Home() {
     return(
       <>
        <input type="text" value={search} placeholder="Pesquise a série" onChange={(event) => searchText( event.target.value)}/>
-    <main className={styles.main}>
+    <main>
       <div>
-    <button className={styles.botao} onClick={orderAz}>Az</button>
+    <button onClick={orderAz}>Az</button>
     </div>
 
     <div>
-    <button className={styles.botao} onClick={orderZa}>Za</button>
+    <button onClick={orderZa}>Za</button>
     </div>
 
     <div>
-    <button className={styles.botao} onClick={tempMaior}>-</button>
+    <button onClick={tempMaior}>-</button>
     </div>
 
     <div>
-    <button className={styles.botao} onClick={tempMenor}>+</button>
+    <button onClick={tempMenor}>+</button>
     </div>
 
       {listaSeries.map((series)=> //o map vai mapear cada produto de uma forma individual
-            <div className={styles.card} key={series.id}>
-              <h2 className={styles.titulo}>Título: {series.title}</h2>
+            <div key={series.id}>
+              <h2 >Título: {series.titulo}</h2>
               <h2>Diretor: {series.diretor}</h2>
-              <h2 className={styles.desc}>Ano de Publicação: {series.anoPublicacao}</h2>
+              <h2 >Ano de Publicação: {series.anoPublicacao}</h2>
               <h2>Gênero: {series.genero}</h2>
               <h2>Temporadas: {series.temporadas}</h2>
               <Image 
               width= {150}
               height={150}
-              src={series.image}/>
-              <Link href={"/series/" + series.id}><p>Ver mais</p></Link>
+              src={series.imagem}/>
+              <Link href={"/serie/" + series.id}><p>Ver mais</p></Link>
 
             </div>
       )}
