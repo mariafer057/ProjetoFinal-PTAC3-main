@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import styles from "./styles.css";
+import styles from "./pgHome.module.css";
 import Link from "next/link";
 import Header from "./Componentes/Header";
 import Carregar from "./Componentes/Carregar";
@@ -46,7 +46,7 @@ export default function Home() {
         setListaSeries(newList);
       }
   
-      //temporadas
+      //temporadas de menor p/ maior
       const tempMaior = () =>{
         let newList = [...listaSeries].sort((a, b)=> 
           a.temporadas - b.temporadas
@@ -54,6 +54,7 @@ export default function Home() {
         setListaSeries(newList); 
       }
 
+      //temp do maior p/ menor
       const tempMenor = () =>{
         let newList = [...listaSeries].sort((a, b)=>
           a.temporadas - b.temporadas
@@ -84,32 +85,24 @@ export default function Home() {
     }
     return(
       <>
-       <input type="text" value={search} placeholder="Pesquise a série" onChange={(event) => searchText( event.target.value)}/>
-    <main>
-      <div>
-    <button onClick={orderAz}>Az</button>
+       <input className={styles.pesquisa} type="text" value={search} placeholder="Pesquise a série" onChange={(event) => searchText( event.target.value)}/>
+    <main className={styles.main}>
+  
+    <div className={styles.botaoContainer}>
+    <button className={styles.button} onClick={orderAz}>Ordenar de Az</button>
+    <button className={styles.button} onClick={orderZa}>Ordenar de Za</button>
+    <button className={styles.button} onClick={tempMaior}>- Temporadas</button>
+    <button className={styles.button} onClick={tempMenor}>+ Temporadas</button>
     </div>
 
-    <div>
-    <button onClick={orderZa}>Za</button>
-    </div>
-
-    <div>
-    <button onClick={tempMaior}>-</button>
-    </div>
-
-    <div>
-    <button onClick={tempMenor}>+</button>
-    </div>
-
-
+      <div className={styles.container}>
       {listaSeries.map((series)=> //o map vai mapear cada produto de uma forma individual
             <div className={styles.card} key={series.id}>
               <h2 >Título: {series.titulo}</h2>
               <h2>Temporadas: {series.temporadas}</h2>
-              <Image 
-              width= {150}
-              height={150}
+              <Image
+              width= {300}
+              height={300}
               src={series.imagem}/>
 
               
@@ -118,6 +111,7 @@ export default function Home() {
 
             </div>
       )}
+      </div>
     </main>
     </>
   );

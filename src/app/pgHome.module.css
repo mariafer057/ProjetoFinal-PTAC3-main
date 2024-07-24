@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px; /* Ajuste o espaço entre os elementos conforme necessário */
+    padding: 50px; /* Ajuste o preenchimento conforme necessário */
+}
+
+.card {
+    background-color: #e2e2e2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 50px;
+    text-align: center;
+}
+.buttonContainer {
+    display: flex;
+    gap: 5px;
+    margin: 20px 0;
+}
+.button {
+    background-color: #920000; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+}
+.pesquisa {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
