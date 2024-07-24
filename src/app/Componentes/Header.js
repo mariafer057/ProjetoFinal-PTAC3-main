@@ -6,11 +6,11 @@ export default function Header(){
     return(
         <header className={styles.cebecalhos}> 
          <h1 className={styles.letra}>
+            
                 Bem-vindo!
                 <br/>
                 Séries Favoritas             
                </h1>
-               
                <img className={styles.logo}
               width= {40}
               height={40}
