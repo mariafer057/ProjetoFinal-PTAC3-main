@@ -85,7 +85,9 @@ export default function Home() {
     }
     return(
       <>
+    <div className={styles.pesquisaContainer}>
        <input className={styles.pesquisa} type="text" value={search} placeholder="Pesquise a série" onChange={(event) => searchText( event.target.value)}/>
+   </div>
     <main className={styles.main}>
   
     <div className={styles.botaoContainer}>

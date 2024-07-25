@@ -1,6 +1,7 @@
 .logo{
     position: absolute;
     padding-inline: 9px;
+    right: 20px;
 }
 .cebecalhos{
     background-color: rgb(48, 8, 8);
